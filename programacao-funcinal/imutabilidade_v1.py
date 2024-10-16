@@ -11,7 +11,22 @@ meses_com_31 = map(
                 )
             )
 
-print(list(meses_com_31))
-
-str_meses = reduce(lambda str, meses: f'{str}\n- {meses}', list(meses_com_31), 'Meses com 31 dias: ')
+str_meses = reduce(
+    lambda str, meses: f'{str}\n- {meses}', meses_com_31, 'Meses com 31 dias: ')
 print(str_meses)
+
+
+def mes_com_31(mes): return mdays[mes] == 31
+
+def get_nome_mes(mes): return month_name[mes]
+
+def juntar_meses(todos, nomes_mes): return f'{todos}\n- {nomes_mes}'
+
+print(
+    reduce(
+        juntar_meses, 
+             map(get_nome_mes, 
+                 filter(mes_com_31, range(1,13))
+                 ),
+            'Meses com 31 dias: ')
+        )

@@ -7,6 +7,7 @@ pessoas = [
     {"nome": "bruna", "idade":23},
     {"nome": "carlos", "idade":20},
 ]
-
+so_dades = map(lambda p: {"idade": p['idade']}, pessoas)
+print(list(so_dades))
 soma_idades = reduce(lambda idades, p: idades + p['idade'], pessoas, 0)
 print(soma_idades)

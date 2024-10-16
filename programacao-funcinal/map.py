@@ -10,4 +10,9 @@ compras = (
     {'quantidade':2, 'preco':20},
 )
 
-[print(frase) for frase in list(map(lambda compra: f"quantidade = {compra['quantidade']}, preco = {compra['preco']}, total = {compra['quantidade'] * compra['preco']}", compras))]
+[print(frase) for frase in list(
+    map(
+        lambda compra: 
+        f"quantidade = {compra['quantidade']}, preco = {compra['preco']}, total = {compra['quantidade'] * compra['preco']}", 
+        compras
+        ))]
